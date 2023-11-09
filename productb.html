@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width ,intial-scale=1.0">
+    <title>Product Page Design</title>
+    <link rel="stylesheet" href="pro.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="product">
+            <div class="gallery">
+                <img src="\Users\RENUKA VANGA\Downloads\men1.jpg" id="productImg">
+                <div class="contols">
+                    <span class="btn active"></span>
+                    <span class="btn"></span>
+                    <span class="btn"></span>
+                </div>
+            </div>
+                <div class="details">
+                    <h1>Casual T shirt</h1>
+                    <h2>$15.00</h2>
+                    <h3>30%</h3>
+                    <p>wrangler is an american manufacture of jeans and other
+                        clothing particulary workers
+                    </p>
+                    <form>
+                        <div class="size-select">
+                            <p>Size</p>
+                            <label for="small">
+                            <input type="radio" name="size" id="small">
+                            <span>S</span>
+                        </label>
+                        <label for="medium">
+                            <input type="radio" name="size" id="small">
+                            <span>M</span>
+                        </label>
+                        <label for="Large">
+                            <input type="radio" name="size" id="small">
+                            <span>L</span>
+                        </label>
+                        <label for="x-large">
+                            <input type="radio" name="size" id="small">
+                            <span>XL</span>
+                        </label>
+                        <label for="xx-large">
+                            <input type="radio" name="size" id="small">
+                            <span>XLL</span>
+                        </label>
+                        
+                        </div>
+                        <div class="color-select">
+                            <p>Color</p>
+                            <label for="red">
+                                <input type="radio" name="color" id="red">
+                                <span class="color-1" ></span>
+                            </label>
+                            <label for="green">
+                                <input type="radio" name="color" id="green">
+                                <span class="color-2" ></span>
+                            </label>
+                            <label for="blue">
+                                <input type="radio" name="color" id="blue">
+                                <span class="color-3" ></span>
+                            </label>
+                            <label for="pink">
+                                <input type="radio" name="color" id="pink">
+                                <span class="color-4" ></span>
+                            </label>
+                        </div>
+                        <div class="quantity-select">
+                            <p>Quantity</p>
+                            <input type="number" value="1">
+                        </div>
+                        <button>Buy Now</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script>
+            let productImg =document.getElementById("productImg");
+            let btn=document.getElementsByClassName("btn")
+
+            btn[0].onclick=function(){
+                productImg.src="/Users/RENUKA VANGA/Downloads/men1.jpg";
+                for(bt of btn){
+                    bt.classList.remove("active")
+                }
+                this.classList.add("active");
+            }
+            btn[1].onclick=function(){
+                productImg.src="/Users/RENUKA VANGA/Downloads/men2.jpg";
+                for(bt of btn){
+                    bt.classList.remove("active")
+                }
+                this.classList.add("active");
+            
+            }
+            btn[2].onclick=function(){
+                productImg.src="/Users/RENUKA VANGA/Downloads/men3.jpg";
+                for(bt of btn){
+                    bt.classList.remove("active")
+                }
+                this.classList.add("active");
+            
+            }
+
+        </script>
+        
+</body>
+</html>

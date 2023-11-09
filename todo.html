@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width,intial-scales">
+        <title>To-Do List App-Easy Tutorials</title>
+        <link rel=stylesheet href="stdo.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="todo-app">
+                <h2> To-Do List <img src="\Users\RENUKA VANGA\Downloads\RFID-in-to-IoT.jpg"></h2>
+                <div class="row">
+                    <input type="text" id="input-box" placeholder="Add your text">
+                    <button onclick="addtask()">Add</button>
+                </div>
+                <ul id="List-container">
+                    <!--<li class="checked">Task1</li>
+                    <li>Task2</li>
+                <li>Task3</li>-->
+                </ul>
+            </div>
+
+        </div>
+        <script>
+            const inputBox=document .getElementById("input-box");
+            const ListContainer=document .getElementById("List-container");
+            function addtask(){
+                if(inputBox.value===''){
+                    alert("you must write something");
+                }
+                else{
+                    let li=document.createElement("li");
+                    li.innerHTML=inputBox.value;
+                    ListContainer.appendChild(li);
+                    let span=document.createElement("span");
+                    span.innerHTML="\u00d7";
+                    li.appendChild(span); 
+                }
+                inputBox.value='';
+                saveData();
+
+            }
+            ListContainer.addEventListener("click",function(e){
+                if(e.target.tagName==="LI"){
+                    e.target.classList.toggle("checked");
+                    saveData();
+                                }
+                else if(e.target.tagName==="SPAN"){
+                    e.target.parentElement.remove();
+                    saveData();
+                                }
+
+               },false);
+               function saveData(){
+                localStorage.setItem("data",ListContainer.innerHTML);
+
+
+               }
+               function showTask(){
+                ListContainer.innerHTML=localStorage.getItem("data")
+               }      
+               showTask();  
+
+        </script>
+    </body>
+</html>
+ 
